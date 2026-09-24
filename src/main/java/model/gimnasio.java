@@ -3,9 +3,9 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SmartGym {
+public class gimnasio {
 
-    private static SmartGym instancia;
+    private static gimnasio instancia;
 
     private String nombreComercial;
     private String nit;
@@ -19,23 +19,15 @@ public class SmartGym {
     private List<ServicioAdicional> listaServicios = new ArrayList<>();
     private List<Inscripcion> listaInscripciones = new ArrayList<>();
 
-    public SmartGym(String nombreComercial, String nit, String direccion, String telefono, String correo, String paginaWeb, List<Persona> listaClientes, List<PlanEntrenamiento> listaPlanes, List<ServicioAdicional> listaServicios, List<Inscripcion> listaInscripciones) {
-        this.nombreComercial = nombreComercial;
-        this.nit = nit;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.paginaWeb = paginaWeb;
-        this.listaPersonas = listaPersonas;
-        this.listaPlanes = listaPlanes;
-        this.listaServicios = listaServicios;
-        this.listaInscripciones = listaInscripciones;
+    private gimnasio() {
+        // Constructor privado para el patrón Singleton
     }
 
-   //faalta el get de instancia
-
-    public static void setInstancia(SmartGym instancia) {
-        SmartGym.instancia = instancia;
+    public static gimnasio getInstance() {
+        if (instancia == null) {
+            instancia = new gimnasio();
+        }
+        return instancia;
     }
 
     public String getNombreComercial() {
