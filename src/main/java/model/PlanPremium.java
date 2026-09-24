@@ -1,0 +1,7 @@
+package model;
+
+public class PlanPremium extends PlanEntrenamiento{
+    public PlanPremium(String codigo, String nombre, String descripcion, int duracionMeses, double valorMensual) {
+        super(codigo, nombre, descripcion, duracionMeses, valorMensual);
+    }
+}
