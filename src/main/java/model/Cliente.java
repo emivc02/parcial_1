@@ -7,7 +7,7 @@ public class Cliente extends Persona{
     private int edad;
     private final LocalDate fechaRegistro;
 
-    public Cliente(String nombre, String documento, String telefono, String correo, LocalDate fechaRegistro) {
+    public Cliente(String nombre, String documento, String telefono, String correo, int edad, LocalDate fechaRegistro) {
         super(nombre, documento, telefono, correo);
         this.edad = edad;
         this.fechaRegistro = fechaRegistro;
@@ -30,6 +30,6 @@ public class Cliente extends Persona{
         return "Cliente{" +
                 "edad=" + edad +
                 ", fechaRegistro=" + fechaRegistro +
-                '}';
+                "} " + super.toString();
     }
 }

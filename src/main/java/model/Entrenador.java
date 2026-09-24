@@ -5,8 +5,7 @@ public class Entrenador extends Persona{
     private String especialidad;
     private double tarifaPorSesion;
 
-
-    public Entrenador(String nombre, String documento, String telefono, String correo) {
+    public Entrenador(String nombre, String documento, String telefono, String correo, String especialidad, double tarifaPorSesion) {
         super(nombre, documento, telefono, correo);
         this.especialidad = especialidad;
         this.tarifaPorSesion = tarifaPorSesion;
@@ -33,6 +32,6 @@ public class Entrenador extends Persona{
         return "Entrenador{" +
                 "especialidad='" + especialidad + '\'' +
                 ", tarifaPorSesion=" + tarifaPorSesion +
-                '}';
+                "} " + super.toString();
     }
 }
