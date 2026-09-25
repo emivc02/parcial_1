@@ -128,7 +128,7 @@ public class Inscripcion {
         private PlanEntrenamiento planEntrenamiento;
         private Entrenador entrenador;
         private List<ServicioAdicional> serviciosAdicionales = new ArrayList<>();
-        private Descuento descuento;
+        private Descuento descuento = new DescuentoPorcentaje(0);
 
         public Builder id(String id) {
             this.id = id;
