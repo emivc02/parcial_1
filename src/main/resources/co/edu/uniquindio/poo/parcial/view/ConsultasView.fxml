@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.poo.parcial.controller.ConsultasController" styleClass="pestana, consultas">
+
+    <VBox styleClass="tarjeta">
+        <Label text="Buscar cliente por teléfono" styleClass="titulo-seccion"/>
+        <Label text="Busca al cliente y determina si su número de teléfono es un número perfecto (ej: 6, 28, 496, 8128)."
+               styleClass="ayuda" wrapText="true"/>
+        <HBox styleClass="fila">
+            <TextField fx:id="txtTelefono" promptText="Número de teléfono" prefWidth="240" onAction="#buscarPorTelefono"/>
+            <Button fx:id="btnBuscar" text="Buscar" onAction="#buscarPorTelefono" styleClass="primario"/>
+            <ProgressIndicator fx:id="progreso" prefWidth="24" prefHeight="24"/>
+        </HBox>
+        <GridPane styleClass="formulario">
+            <columnConstraints>
+                <ColumnConstraints minWidth="130"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+            <Label text="Cliente:" styleClass="etiqueta" GridPane.rowIndex="0"/>
+            <Label fx:id="lblCliente" text="—" wrapText="true" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="¿Número perfecto?" styleClass="etiqueta" GridPane.rowIndex="1"/>
+            <Label fx:id="lblPerfecto" text="—" wrapText="true" styleClass="resultado" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        </GridPane>
+    </VBox>
+
+    <VBox styleClass="tarjeta" VBox.vgrow="ALWAYS">
+        <Label text="Ingresos por periodo" styleClass="titulo-seccion"/>
+        <Label text="Suma el valor total de las inscripciones realizadas entre las dos fechas."
+               styleClass="ayuda" wrapText="true"/>
+        <HBox styleClass="fila">
+            <Label text="Desde"/>
+            <DatePicker fx:id="dpInicio" prefWidth="150"/>
+            <Label text="Hasta"/>
+            <DatePicker fx:id="dpFin" prefWidth="150"/>
+            <Button text="Calcular ingresos" onAction="#calcularIngresos" styleClass="primario"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Total:"/>
+            <Label fx:id="lblIngresos" text="—" styleClass="valor-total"/>
+        </HBox>
+        <TableView fx:id="tablaPeriodo" styleClass="tabla" VBox.vgrow="ALWAYS">
+            <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN"/></columnResizePolicy>
+            <columns>
+                <TableColumn fx:id="colId" text="ID"/>
+                <TableColumn fx:id="colFecha" text="Fecha"/>
+                <TableColumn fx:id="colCliente" text="Cliente"/>
+                <TableColumn fx:id="colPlan" text="Plan"/>
+                <TableColumn fx:id="colValor" text="Valor total"/>
+            </columns>
+            <placeholder><Label text="Presione &quot;Calcular ingresos&quot; para ver las inscripciones del periodo"/></placeholder>
+        </TableView>
+    </VBox>
+</VBox>

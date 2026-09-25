@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.parcial.controller.MainController" styleClass="raiz">
+    <top>
+        <VBox styleClass="encabezado">
+            <Label fx:id="lblNombre" styleClass="titulo"/>
+            <Label fx:id="lblDatos" styleClass="subtitulo"/>
+        </VBox>
+    </top>
+    <center>
+        <TabPane fx:id="tabs" tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Clientes">
+                <fx:include fx:id="clientes" source="ClientesView.fxml"/>
+            </Tab>
+            <Tab text="Entrenadores">
+                <fx:include fx:id="entrenadores" source="EntrenadoresView.fxml"/>
+            </Tab>
+            <Tab text="Planes">
+                <fx:include fx:id="planes" source="PlanesView.fxml"/>
+            </Tab>
+            <Tab text="Servicios adicionales">
+                <fx:include fx:id="servicios" source="ServiciosView.fxml"/>
+            </Tab>
+            <Tab text="Inscripciones">
+                <fx:include fx:id="inscripciones" source="InscripcionesView.fxml"/>
+            </Tab>
+            <Tab text="Consultas">
+                <fx:include fx:id="consultas" source="ConsultasView.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

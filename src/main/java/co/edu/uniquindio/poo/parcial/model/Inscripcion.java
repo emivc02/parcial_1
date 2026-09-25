@@ -1,4 +1,4 @@
-package model;
+package co.edu.uniquindio.poo.parcial.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -108,10 +108,15 @@ public class Inscripcion {
 
     public double calcularTotal() {
         double total = planEntrenamiento.calcularValorMeses();
-        for (ServicioAdicional servicio : serviciosAdicionales) {
-            total += servicio.getPrecio();
+        if (serviciosAdicionales != null) {
+            for (ServicioAdicional servicio : serviciosAdicionales) {
+                total += servicio.getPrecio();
+            }
         }
-        return descuento.aplicarDescuento(total);
+        if (descuento != null) {
+            return descuento.aplicarDescuento(total);
+        }
+        return total;
     }
 
     public void agregarServicio(ServicioAdicional servicio) {
@@ -128,7 +133,7 @@ public class Inscripcion {
         private PlanEntrenamiento planEntrenamiento;
         private Entrenador entrenador;
         private List<ServicioAdicional> serviciosAdicionales = new ArrayList<>();
-        private Descuento descuento;
+        private Descuento descuento = new DescuentoPorcentaje(0);
 
         public Builder id(String id) {
             this.id = id;

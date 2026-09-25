@@ -1,4 +1,4 @@
-package model;
+package co.edu.uniquindio.poo.parcial.model;
 
 public abstract class PlanEntrenamiento {
 
@@ -16,6 +16,7 @@ public abstract class PlanEntrenamiento {
         this.descripcion = descripcion;
         this.duracionMeses = duracionMeses;
         this.valorMensual = valorMensual;
+        this.estado = EstadoPlan.ACTIVO;
     }
 
     public String getCodigo() {

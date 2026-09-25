@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.parcial.controller.EntrenadoresController" styleClass="pestana">
+    <top>
+        <VBox spacing="8" styleClass="formulario-arriba">
+            <Label text="Datos del entrenador" styleClass="titulo-seccion"/>
+            <FlowPane hgap="10" vgap="8">
+                <VBox spacing="3"><Label text="Identificación"/><TextField fx:id="txtDocumento" prefWidth="120"/></VBox>
+                <VBox spacing="3"><Label text="Nombre"/><TextField fx:id="txtNombre" prefWidth="180"/></VBox>
+                <VBox spacing="3"><Label text="Teléfono"/><TextField fx:id="txtTelefono" prefWidth="130"/></VBox>
+                <VBox spacing="3"><Label text="Correo"/><TextField fx:id="txtCorreo" prefWidth="180"/></VBox>
+                <VBox spacing="3"><Label text="Especialidad"/><TextField fx:id="txtEspecialidad" prefWidth="130"/></VBox>
+                <VBox spacing="3"><Label text="Tarifa por sesión"/><TextField fx:id="txtTarifa" prefWidth="110"/></VBox>
+            </FlowPane>
+            <HBox spacing="6">
+                <Button text="Registrar" onAction="#registrar"/>
+                <Button text="Actualizar" onAction="#actualizar"/>
+                <Button text="Eliminar" onAction="#eliminar"/>
+                <Button text="Limpiar" onAction="#limpiar"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tabla">
+            <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN"/></columnResizePolicy>
+            <columns>
+                <TableColumn fx:id="colDocumento" text="Identificación"/>
+                <TableColumn fx:id="colNombre" text="Nombre"/>
+                <TableColumn fx:id="colTelefono" text="Teléfono"/>
+                <TableColumn fx:id="colCorreo" text="Correo"/>
+                <TableColumn fx:id="colEspecialidad" text="Especialidad"/>
+                <TableColumn fx:id="colTarifa" text="Tarifa/sesión"/>
+            </columns>
+            <placeholder><Label text="No hay entrenadores registrados"/></placeholder>
+        </TableView>
+    </center>
+</BorderPane>

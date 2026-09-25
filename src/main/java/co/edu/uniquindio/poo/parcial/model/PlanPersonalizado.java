@@ -1,4 +1,4 @@
-package model;
+package co.edu.uniquindio.poo.parcial.model;
 
 public class PlanPersonalizado extends PlanEntrenamiento{
 
