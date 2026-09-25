@@ -24,6 +24,7 @@ public class Inscripcion {
         this.entrenador = builder.entrenador;
         this.serviciosAdicionales = builder.serviciosAdicionales;
         this.descuento = builder.descuento;
+        this.valorTotal = calcularTotal();
     }
 
     // Getters y Setters
