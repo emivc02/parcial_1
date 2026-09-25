@@ -13,6 +13,7 @@ public class Inscripcion {
     private PlanEntrenamiento planEntrenamiento;
     private Entrenador entrenador;
     private List<ServicioAdicional> serviciosAdicionales;
+    private Descuento descuento;
 
     private Inscripcion(Builder builder) {
         this.id = builder.id;
@@ -22,6 +23,7 @@ public class Inscripcion {
         this.planEntrenamiento = builder.planEntrenamiento;
         this.entrenador = builder.entrenador;
         this.serviciosAdicionales = builder.serviciosAdicionales;
+        this.descuento = builder.descuento;
     }
 
     // Getters y Setters
@@ -82,6 +84,14 @@ public class Inscripcion {
         this.serviciosAdicionales = serviciosAdicionales;
     }
 
+    public Descuento getDescuento() {
+        return descuento;
+    }
+
+    public void setDescuento(Descuento descuento) {
+        this.descuento = descuento;
+    }
+
     @Override
     public String toString() {
         return "Inscripcion{" +
@@ -95,7 +105,18 @@ public class Inscripcion {
                 '}';
     }
 
-    // creo que asi es el patron, hay algunos locos que hacen clase aparte, pero asi lo hizo el profe
+    public double calcularTotal() {
+        double total = planEntrenamiento.calcularValorMeses();
+        for (ServicioAdicional servicio : serviciosAdicionales) {
+            total += servicio.getPrecio();
+        }
+        return descuento.aplicarDescuento(total);
+    }
+
+    public void agregarServicio(ServicioAdicional servicio) {
+        serviciosAdicionales.add(servicio);
+        valorTotal = calcularTotal();
+    }
 
     public static class Builder {
 
@@ -106,6 +127,7 @@ public class Inscripcion {
         private PlanEntrenamiento planEntrenamiento;
         private Entrenador entrenador;
         private List<ServicioAdicional> serviciosAdicionales = new ArrayList<>();
+        private Descuento descuento;
 
         public Builder id(String id) {
             this.id = id;
@@ -147,8 +169,16 @@ public class Inscripcion {
             return this;
         }
 
+        public Builder descuento(Descuento descuento) {
+            this.descuento = descuento;
+            return this;
+        }
+
         public Inscripcion build() {
             return new Inscripcion(this);
         }
+
+
     }
+
 }

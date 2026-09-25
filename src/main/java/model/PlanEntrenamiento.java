@@ -86,4 +86,8 @@ public abstract class PlanEntrenamiento {
                 ", estado=" + estado +
                 '}';
     }
+
+    public double calcularValorMeses() {
+        return valorMensual * duracionMeses;
+    }
 }

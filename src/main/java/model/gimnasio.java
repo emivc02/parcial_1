@@ -37,14 +37,6 @@ public class gimnasio {
 
 
     /**
-     * crea clientes
-     * @param cliente
-     */
-    public void agregarCliente(Cliente cliente) {
-        listaClientes.add(cliente);
-    }
-
-    /**
      * metodo que permite leer clientes
      * @param documento
      * @return
@@ -131,7 +123,7 @@ public class gimnasio {
         if (entrenador != null) {
             entrenador.setNombre(nombre);
             entrenador.setTelefono(telefono);
-            entrenador.setCorreo(correo);
+
             entrenador.setEspecialidad(especialidad);
             entrenador.setTarifaPorSesion(tarifaPorSesion);
             return true;
@@ -441,5 +433,8 @@ public class gimnasio {
                 ", listaServicios=" + listaServicios +
                 ", listaInscripciones=" + listaInscripciones +
                 '}';
+    }
+
+    public void agregarCliente(Cliente cliente) {
     }
 }

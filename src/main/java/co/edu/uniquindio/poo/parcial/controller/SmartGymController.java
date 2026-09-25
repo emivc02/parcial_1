@@ -7,12 +7,14 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import model.Cliente;
+import model.ClienteLogica;
 import model.gimnasio;
 
 import java.time.LocalDate;
 
 public class SmartGymController {
 
+    private final ClienteLogica clienteLogica = new ClienteLogica(gimnasio.getInstance());
     @FXML private TextField txtNombreCliente;
     @FXML private TextField txtDocumentoCliente;
     @FXML private TextField txtTelefonoCliente;

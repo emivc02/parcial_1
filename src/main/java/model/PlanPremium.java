@@ -6,4 +6,6 @@ public class PlanPremium extends PlanEntrenamiento{
         super(codigo, nombre, descripcion, duracionMeses, valorMensual);
         setBeneficios("Acceso a zonas deportivas, clases grupales");
     }
+
+
 }
