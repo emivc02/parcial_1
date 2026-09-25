@@ -1,9 +1,6 @@
 package model;
 
-import co.edu.uniquindio.poo.parcial.model.Cliente;
-import co.edu.uniquindio.poo.parcial.model.Inscripcion;
-import co.edu.uniquindio.poo.parcial.model.PlanBasicoFactory;
-import co.edu.uniquindio.poo.parcial.model.PlanEntrenamiento;
+import co.edu.uniquindio.poo.parcial.model.*;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -12,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class InscripcionTest {
 
+    /**
+     * metodo que permite probar la creacion de inscripcion con builder
+     */
     @Test
     void creacionInscripcionConBuilder() {
         Cliente cliente = new Cliente("Carlos", "1094", "3104567890", "carlos@mail.com", 25, LocalDate.now());
@@ -28,6 +28,9 @@ class InscripcionTest {
         assertEquals("PB-01", inscripcion.getPlanEntrenamiento().getCodigo());
     }
 
+    /**
+     * metodo que permite probar si se agrega correctamente un servicio en curso
+     */
     @Test
     void agregarServicioEnCurso() {
         Cliente cliente = new Cliente("Lucia", "2", "2", "lucia@mail.com", 20, LocalDate.now());
@@ -48,6 +51,9 @@ class InscripcionTest {
         assertEquals(150000, inscripcion.getValorTotal());
     }
 
+    /**
+     * metodo que permite probar el calculo del total con servicios y descuento
+     */
     @Test
     void calcularTotalConServiciosYDescuento() {
         Cliente cliente = new Cliente("Andres", "3", "3", "andres@mail.com", 20, LocalDate.now());

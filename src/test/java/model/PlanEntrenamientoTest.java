@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlanEntrenamientoTest {
 
+    /**
+     * metodo que permite probar el calculo del valor de los meses
+     */
     @Test
     void calcularValorMeses() {
 
@@ -28,6 +31,9 @@ class PlanEntrenamientoTest {
             assertEquals(360000, inscripcion.getValorTotal());
     }
 
+    /**
+     * metodo que permite probar la creacion de planes mediante el uso de las fabricas
+     */
     @Test
     void crearPlanesConFabricas() {
         PlanEntrenamiento planBasico = new PlanBasicoFactory()
@@ -50,6 +56,9 @@ class PlanEntrenamientoTest {
         assertEquals("Fuerza", personalizado.getEspecialidadRequerida());
     }
 
+    /**
+     * metodo que permite probar el registro de un servicio adicional
+     */
     @Test
     void registrarServicioAdicional() {
         ServicioAdicional servicio = new ServicioAdicional("1", "Nutricion", "", 50000, true);

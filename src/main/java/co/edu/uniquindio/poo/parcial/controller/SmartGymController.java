@@ -36,6 +36,9 @@ public class SmartGymController {
     private gimnasio gym;
     private ObservableList<Cliente> listaClientesObservable;
 
+    /**
+     * metodo que inicializa los componentes
+     */
     @FXML
     public void initialize() {
         gym = gimnasio.getInstance();
@@ -65,6 +68,9 @@ public class SmartGymController {
         actualizarContadores();
     }
 
+    /**
+     * metodo que permite agregar cliente
+     */
     @FXML
     private void onAgregarCliente() {
         try {
@@ -100,6 +106,9 @@ public class SmartGymController {
         }
     }
 
+    /**
+     * metodo que permite actualizar cliente
+     */
     @FXML
     private void onActualizarCliente() {
         try {
@@ -128,6 +137,9 @@ public class SmartGymController {
         }
     }
 
+    /**
+     * metodo que permite eliminar cliente
+     */
     @FXML
     private void onEliminarCliente() {
         String documento = txtDocumentoCliente.getText();
@@ -147,17 +159,26 @@ public class SmartGymController {
         }
     }
 
+    /**
+     * metodo que permite limpiar el formulario
+     */
     @FXML
     private void onLimpiarCliente() {
         limpiarFormularioCliente();
         lblMensajeCliente.setText("");
     }
 
+    /**
+     * metodo que permite actualizar la tabla
+     */
     private void actualizarTablaClientes() {
         listaClientesObservable.setAll(gym.getListaClientes());
         actualizarContadores();
     }
 
+    /**
+     * metodo que permite limpiar los campos
+     */
     private void limpiarFormularioCliente() {
         txtNombreCliente.clear();
         txtDocumentoCliente.clear();
@@ -167,11 +188,19 @@ public class SmartGymController {
         tablaClientes.getSelectionModel().clearSelection();
     }
 
+    /**
+     * metodo que permite mostrar un mensaje en pantalla
+     * @param mensaje
+     * @param esError
+     */
     private void mostrarMensaje(String mensaje, boolean esError) {
         lblMensajeCliente.setText(mensaje);
         lblMensajeCliente.setStyle(esError ? "-fx-text-fill: red;" : "-fx-text-fill: green;");
     }
 
+    /**
+     * metodo que permite actualizar los contadores
+     */
     private void actualizarContadores() {
         lblTotalClientes.setText(String.valueOf(gym.getListaClientes().size()));
         lblTotalEntrenadores.setText(String.valueOf(gym.getListaEntrenadores().size()));

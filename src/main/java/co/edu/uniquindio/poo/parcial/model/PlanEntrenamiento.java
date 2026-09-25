@@ -10,6 +10,14 @@ public abstract class PlanEntrenamiento {
     private String beneficios;
     private EstadoPlan estado;
 
+    /**
+     * constructor de la clase PlanEntrenamiento
+     * @param codigo
+     * @param nombre
+     * @param descripcion
+     * @param duracionMeses
+     * @param valorMensual
+     */
     public PlanEntrenamiento(String codigo, String nombre, String descripcion, int duracionMeses, double valorMensual) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -88,6 +96,10 @@ public abstract class PlanEntrenamiento {
                 '}';
     }
 
+    /**
+     * metodo que calcula el valor por meses
+     * @return
+     */
     public double calcularValorMeses() {
         return valorMensual * duracionMeses;
     }

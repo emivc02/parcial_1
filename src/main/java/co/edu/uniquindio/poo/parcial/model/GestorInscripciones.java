@@ -6,10 +6,18 @@ public class GestorInscripciones {
 
     private final gimnasio gym;
 
+    /**
+     * constructor de la clase GestorInscripciones
+     */
     public GestorInscripciones() {
         this.gym = gimnasio.getInstance();
     }
 
+    /**
+     * metodo que permite buscar la inscripcion por id
+     * @param id
+     * @return
+     */
     public Inscripcion buscarInscripcionPorId(String id) {
         for (Inscripcion i : gym.getListaInscripciones()) {
             if (i.getId().equals(id)) {
@@ -19,6 +27,11 @@ public class GestorInscripciones {
         return null;
     }
 
+    /**
+     * metodo que permite eliminar inscripcion
+     * @param id
+     * @return
+     */
     public boolean eliminarInscripcion(String id) {
         Inscripcion inscripcion = buscarInscripcionPorId(id);
         if (inscripcion != null) {
@@ -28,6 +41,11 @@ public class GestorInscripciones {
         return false;
     }
 
+    /**
+     * metodo que permite registrar inscripcion
+     * @param inscripcion
+     * @throws Exception
+     */
     public void registrarInscripcion(Inscripcion inscripcion) throws Exception {
         if (inscripcion != null) {
             for (Inscripcion i : gym.getListaInscripciones()) {
@@ -49,6 +67,12 @@ public class GestorInscripciones {
         }
     }
 
+    /**
+     * metodo que permite calcular ingresos por periodo
+     * @param fechaInicio
+     * @param fechaFin
+     * @return
+     */
     public double calcularIngresosPorPeriodo(LocalDate fechaInicio, LocalDate fechaFin) {
         double totalIngresos = 0.0;
         for (Inscripcion inscripcion : gym.getListaInscripciones()) {

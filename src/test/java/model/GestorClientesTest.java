@@ -13,6 +13,9 @@ class GestorClientesTest {
 
     private GestorClientes gestor = new GestorClientes();
 
+    /**
+     * metodo que permite probar la busqueda de cliente por telefono
+     */
     @Test
     void buscarPorTelefono() {
         Cliente cliente = new Cliente("Laura", "2001", "3001112233",
@@ -26,6 +29,9 @@ class GestorClientesTest {
         assertNull(gestor.buscarPorTelefono("0000000000"));
     }
 
+    /**
+     * metodo que permite probar si un numero es perfecto
+     */
     @Test
     void esNumeroPerfecto() {
 
@@ -37,6 +43,10 @@ class GestorClientesTest {
         assertFalse(gestor.esNumeroPerfecto(3001112233L));
     }
 
+    /**
+     * metodo que permite probar el registro de clientes
+     * @throws Exception
+     */
     @Test
     void registrarCliente() throws Exception {
         Cliente cliente = new Cliente("Juan", "1", "1", "juan@mail.com", 20, LocalDate.now());
@@ -49,6 +59,9 @@ class GestorClientesTest {
         assertThrows(Exception.class, () -> gestor.registrar(cliente));
     }
 
+    /**
+     * metodo que permite probar la actualizacion de clientes
+     */
     @Test
     void actualizarCliente() {
         Cliente cliente = new Cliente("Maria", "2", "2", "maria@mail.com", 20, LocalDate.now());
@@ -61,6 +74,9 @@ class GestorClientesTest {
         assertEquals(25, cliente.getEdad());
     }
 
+    /**
+     * metodo que permite probar la eliminacion de clientes
+     */
     @Test
     void eliminarCliente() {
         Cliente cliente = new Cliente("Pedro", "3", "3", "pedro@mail.com", 20, LocalDate.now());

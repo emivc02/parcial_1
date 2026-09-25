@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GestorInscripcionesTest {
 
+    /**
+     * metodo que permite probar el calculo de ingresos por periodo
+     */
     @Test
     void calcularIngresosPorPeriodo() {
 
@@ -26,6 +29,10 @@ class GestorInscripcionesTest {
         assertEquals(300000, ingresos);
     }
 
+    /**
+     * metodo que permite probar el registro de inscripcion de un plan basico
+     * @throws Exception
+     */
     @Test
     void registrarInscripcionPlanBasico() throws Exception {
         GestorInscripciones gestor = new GestorInscripciones();
@@ -46,6 +53,10 @@ class GestorInscripcionesTest {
         assertEquals("1", encontrada.getId());
     }
 
+    /**
+     * metodo que permite probar el registro de inscripcion de un plan personalizado
+     * @throws Exception
+     */
     @Test
     void registrarInscripcionPlanPersonalizado() throws Exception {
         GestorInscripciones gestor = new GestorInscripciones();
@@ -69,6 +80,9 @@ class GestorInscripcionesTest {
         assertEquals("Andres", encontrada.getEntrenador().getNombre());
     }
 
+    /**
+     * metodo que permite probar la validacion de error si se asigna entrenador a un plan basico
+     */
     @Test
     void validarErrorEntrenadorEnPlanBasico() {
         GestorInscripciones gestor = new GestorInscripciones();

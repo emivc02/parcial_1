@@ -55,7 +55,7 @@ public class ConsultasController {
     }
 
     public void refrescar() {
-        // Nada que precargar; las consultas se hacen al presionar los botones.
+
     }
 
     @FXML
@@ -82,7 +82,6 @@ public class ConsultasController {
             return;
         }
 
-        // Se calcula en segundo plano para que la ventana no se congele con números grandes.
         Task<Boolean> tarea = new Task<>() {
             @Override
             protected Boolean call() {

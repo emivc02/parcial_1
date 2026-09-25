@@ -1,5 +1,8 @@
 package model;
 
+import co.edu.uniquindio.poo.parcial.model.Entrenador;
+import co.edu.uniquindio.poo.parcial.model.GestorEntrenadores;
+import co.edu.uniquindio.poo.parcial.model.gimnasio;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,6 +11,10 @@ class GestorEntrenadoresTest {
 
     private GestorEntrenadores gestor = new GestorEntrenadores();
 
+    /**
+     * test que permite verificar si se registro correctamente un entrenador
+     * @throws Exception
+     */
     @Test
     void registrarEntrenador() throws Exception {
         Entrenador entrenador = new Entrenador("Mario", "1", "1", "mario@mail.com", "Fuerza", 50000);
@@ -20,6 +27,9 @@ class GestorEntrenadoresTest {
         assertThrows(Exception.class, () -> gestor.registrar(entrenador));
     }
 
+    /**
+     * metodo que verifica si se actualizo correctamente un entrenador
+     */
     @Test
     void actualizarEntrenador() {
         Entrenador entrenador = new Entrenador("Sofia", "2", "2", "sofia@mail.com", "Cardio", 40000);
@@ -33,6 +43,9 @@ class GestorEntrenadoresTest {
         assertEquals(50000, entrenador.getTarifaPorSesion());
     }
 
+    /**
+     * metodo que permite probar la eliminacion de entrenadores
+     */
     @Test
     void eliminarEntrenador() {
         Entrenador entrenador = new Entrenador("Luis", "3", "3", "luis@mail.com", "Funcional", 30000);
