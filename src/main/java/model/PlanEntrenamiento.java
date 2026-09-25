@@ -16,6 +16,7 @@ public abstract class PlanEntrenamiento {
         this.descripcion = descripcion;
         this.duracionMeses = duracionMeses;
         this.valorMensual = valorMensual;
+        this.estado = EstadoPlan.ACTIVO;
     }
 
     public String getCodigo() {

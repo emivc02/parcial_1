@@ -108,10 +108,15 @@ public class Inscripcion {
 
     public double calcularTotal() {
         double total = planEntrenamiento.calcularValorMeses();
-        for (ServicioAdicional servicio : serviciosAdicionales) {
-            total += servicio.getPrecio();
+        if (serviciosAdicionales != null) {
+            for (ServicioAdicional servicio : serviciosAdicionales) {
+                total += servicio.getPrecio();
+            }
         }
-        return descuento.aplicarDescuento(total);
+        if (descuento != null) {
+            return descuento.aplicarDescuento(total);
+        }
+        return total;
     }
 
     public void agregarServicio(ServicioAdicional servicio) {

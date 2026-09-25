@@ -1,11 +1,17 @@
 package model;
 
+import java.util.List;
+
 public class GestorClientes {
 
     private final gimnasio gym;
 
     public GestorClientes() {
         this.gym = gimnasio.getInstance();
+    }
+
+    public List<Cliente> listarClientes() {
+        return gym.getListaClientes();
     }
 
     public void registrar(Cliente cliente) throws Exception {
