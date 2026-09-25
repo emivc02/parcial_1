@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.parcial.controller.InscripcionesController" styleClass="pestana">
+    <top>
+        <VBox spacing="8" styleClass="formulario-arriba">
+            <Label text="Nueva inscripción" styleClass="titulo-seccion"/>
+            <FlowPane hgap="10" vgap="8">
+                <VBox spacing="3"><Label text="ID"/><TextField fx:id="txtId" prefWidth="70"/></VBox>
+                <VBox spacing="3"><Label text="Fecha"/><DatePicker fx:id="dpFecha" prefWidth="130"/></VBox>
+                <VBox spacing="3"><Label text="Cliente"/><ComboBox fx:id="cbCliente" prefWidth="180" promptText="Seleccione"/></VBox>
+                <VBox spacing="3"><Label text="Plan"/><ComboBox fx:id="cbPlan" prefWidth="210" promptText="Seleccione"/></VBox>
+                <VBox spacing="3">
+                    <Label text="Entrenador"/>
+                    <ComboBox fx:id="cbEntrenador" prefWidth="180" promptText="Seleccione"/>
+                    <Label fx:id="lblAyudaEntrenador" text="Solo para planes personalizados" styleClass="ayuda"/>
+                </VBox>
+                <VBox spacing="3"><Label text="Descuento (%)"/><TextField fx:id="txtDescuento" prefWidth="80"/></VBox>
+                <VBox spacing="3"><Label text="Servicios adicionales"/><ListView fx:id="lvServicios" prefWidth="330" prefHeight="80"/></VBox>
+            </FlowPane>
+            <HBox spacing="6" alignment="CENTER_LEFT">
+                <Button text="Registrar" onAction="#registrar"/>
+                <Button text="Eliminar" onAction="#eliminar"/>
+                <Button text="Limpiar" onAction="#limpiar"/>
+                <Label text="   Valor total:"/>
+                <Label fx:id="lblTotal" text="—" styleClass="valor-total"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tabla">
+            <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN"/></columnResizePolicy>
+            <columns>
+                <TableColumn fx:id="colId" text="ID"/>
+                <TableColumn fx:id="colFecha" text="Fecha"/>
+                <TableColumn fx:id="colCliente" text="Cliente"/>
+                <TableColumn fx:id="colPlan" text="Plan"/>
+                <TableColumn fx:id="colEntrenador" text="Entrenador"/>
+                <TableColumn fx:id="colServicios" text="Servicios"/>
+                <TableColumn fx:id="colTotal" text="Valor total"/>
+            </columns>
+            <placeholder><Label text="No hay inscripciones registradas"/></placeholder>
+        </TableView>
+    </center>
+</BorderPane>

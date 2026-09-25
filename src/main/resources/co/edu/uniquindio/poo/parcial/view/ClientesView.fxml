@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.parcial.controller.ClientesController" styleClass="pestana">
+    <top>
+        <VBox spacing="8" styleClass="formulario-arriba">
+            <Label text="Datos del cliente" styleClass="titulo-seccion"/>
+            <FlowPane hgap="10" vgap="8">
+                <VBox spacing="3"><Label text="Documento"/><TextField fx:id="txtDocumento" prefWidth="120"/></VBox>
+                <VBox spacing="3"><Label text="Nombre completo"/><TextField fx:id="txtNombre" prefWidth="180"/></VBox>
+                <VBox spacing="3"><Label text="Teléfono"/><TextField fx:id="txtTelefono" prefWidth="130"/></VBox>
+                <VBox spacing="3"><Label text="Correo"/><TextField fx:id="txtCorreo" prefWidth="180"/></VBox>
+                <VBox spacing="3"><Label text="Edad"/><TextField fx:id="txtEdad" prefWidth="60"/></VBox>
+                <VBox spacing="3"><Label text="Fecha de registro"/><DatePicker fx:id="dpFechaRegistro" prefWidth="140"/></VBox>
+            </FlowPane>
+            <HBox spacing="6">
+                <Button text="Registrar" onAction="#registrar"/>
+                <Button text="Actualizar" onAction="#actualizar"/>
+                <Button text="Eliminar" onAction="#eliminar"/>
+                <Button text="Limpiar" onAction="#limpiar"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tabla">
+            <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN"/></columnResizePolicy>
+            <columns>
+                <TableColumn fx:id="colDocumento" text="Documento"/>
+                <TableColumn fx:id="colNombre" text="Nombre"/>
+                <TableColumn fx:id="colTelefono" text="Teléfono"/>
+                <TableColumn fx:id="colCorreo" text="Correo"/>
+                <TableColumn fx:id="colEdad" text="Edad"/>
+                <TableColumn fx:id="colFecha" text="Registro"/>
+            </columns>
+            <placeholder><Label text="No hay clientes registrados"/></placeholder>
+        </TableView>
+    </center>
+</BorderPane>

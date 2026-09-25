@@ -1,5 +1,6 @@
 package model;
 
+import co.edu.uniquindio.poo.parcial.model.*;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

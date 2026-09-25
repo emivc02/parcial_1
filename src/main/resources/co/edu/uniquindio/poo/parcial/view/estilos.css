@@ -1,0 +1,15 @@
+/* Estilo básico de SmartGym */
+
+.encabezado { -fx-padding: 10 15 10 15; }
+.titulo { -fx-font-size: 18px; -fx-font-weight: bold; }
+
+.pestana { -fx-padding: 10; -fx-spacing: 10; }
+.formulario-arriba { -fx-padding: 0 0 10 0; }
+
+.titulo-seccion { -fx-font-size: 14px; -fx-font-weight: bold; }
+.ayuda { -fx-font-size: 11px; -fx-text-fill: #666; }
+.formulario { -fx-hgap: 8; -fx-vgap: 6; }
+.fila { -fx-spacing: 8; -fx-alignment: center-left; }
+.valor-total { -fx-font-weight: bold; }
+.etiqueta { -fx-font-weight: bold; }
+.tarjeta { -fx-spacing: 8; }

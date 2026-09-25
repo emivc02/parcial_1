@@ -1,6 +1,5 @@
-package model;
+package co.edu.uniquindio.poo.parcial.model;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 

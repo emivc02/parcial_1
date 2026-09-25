@@ -1,5 +1,9 @@
 package model;
 
+import co.edu.uniquindio.poo.parcial.model.Cliente;
+import co.edu.uniquindio.poo.parcial.model.Inscripcion;
+import co.edu.uniquindio.poo.parcial.model.PlanBasicoFactory;
+import co.edu.uniquindio.poo.parcial.model.PlanEntrenamiento;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package model;
+package co.edu.uniquindio.poo.parcial.model;
 
 public class DescuentoPorcentaje implements Descuento {
     private double porcentaje;

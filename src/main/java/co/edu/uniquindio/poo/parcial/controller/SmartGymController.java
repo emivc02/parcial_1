@@ -6,9 +6,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import model.Cliente;
-import model.GestorClientes;
-import model.gimnasio;
+import co.edu.uniquindio.poo.parcial.model.Cliente;
+import co.edu.uniquindio.poo.parcial.model.GestorClientes;
+import co.edu.uniquindio.poo.parcial.model.gimnasio;
 
 import java.time.LocalDate;
 
