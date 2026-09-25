@@ -36,114 +36,8 @@ public class gimnasio {
     }
 
 
-    /**
-     * metodo que permite leer clientes
-     * @param documento
-     * @return
-     */
-    public Cliente buscarClientePorDocumento(String documento) {
-        for (Cliente cliente : listaClientes) {
-            if (cliente.getDocumento().equals(documento)) {
-                return cliente;
-            }
-        }
-        return null;
-    }
 
-    /**
-     * metodo que permite actualizar clientes
-     * @param documento
-     * @param nombre
-     * @param telefono
-     * @param correo
-     * @param edad
-     * @return
-     */
-    public boolean actualizarCliente(String documento, String nombre, String telefono, String correo, int edad) {
-        Cliente cliente = buscarClientePorDocumento(documento);
-        if (cliente != null) {
-            cliente.setNombre(nombre);
-            cliente.setTelefono(telefono);
-            cliente.setCorreo(correo);
-            cliente.setEdad(edad);
-            return true;
-        }
-        return false;
-    }
 
-    /**
-     * metodo que permite eliminar clientes
-     * @param documento
-     * @return
-     */
-    public boolean eliminarCliente(String documento) {
-        Cliente cliente = buscarClientePorDocumento(documento);
-        if (cliente != null) {
-            listaClientes.remove(cliente);
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * metodo que permite crear entrenadores
-     * @param entrenador
-     */
-
-    public void agregarEntrenador(Entrenador entrenador) {
-        listaEntrenadores.add(entrenador);
-    }
-
-    /**
-     * metodo que permite leer entrenadores
-     * @param documento
-     * @return
-     */
-    public Entrenador buscarEntrenadorPorDocumento(String documento) {
-        for (Entrenador entrenador : listaEntrenadores) {
-            if (entrenador.getDocumento().equals(documento)) {
-                return entrenador;
-            }
-        }
-        return null;
-    }
-
-    /**
-     * metodo que permite actualizar entrenadores
-     * @param documento
-     * @param nombre
-     * @param telefono
-     * @param correo
-     * @param especialidad
-     * @param tarifaPorSesion
-     * @return
-     */
-    public boolean actualizarEntrenador(String documento, String nombre, String telefono, String correo, String especialidad, double tarifaPorSesion) {
-        Entrenador entrenador = buscarEntrenadorPorDocumento(documento);
-        if (entrenador != null) {
-            entrenador.setNombre(nombre);
-            entrenador.setTelefono(telefono);
-
-            entrenador.setEspecialidad(especialidad);
-            entrenador.setTarifaPorSesion(tarifaPorSesion);
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * metodo que permite eliminar entrenadores
-     * @param documento
-     * @return
-     */
-    public boolean eliminarEntrenador(String documento) {
-        Entrenador entrenador = buscarEntrenadorPorDocumento(documento);
-        if (entrenador != null) {
-            listaEntrenadores.remove(entrenador);
-            return true;
-        }
-        return false;
-    }
 
     /**
      * metodo que permite crear planes de entrenammiento
@@ -256,76 +150,6 @@ public class gimnasio {
         return false;
     }
 
-    /**
-     * metodo que permite agregr inscripciones
-     * @param inscripcion
-     */
-
-    public void agregarInscripcion(Inscripcion inscripcion) {
-        listaInscripciones.add(inscripcion);
-    }
-
-    /**
-     * metodo que permite leer inscripciones
-     * @param id
-     * @return
-     */
-    public Inscripcion buscarInscripcionPorId(String id) {
-        for (Inscripcion inscripcion : listaInscripciones) {
-            if (inscripcion.getId().equals(id)) {
-                return inscripcion;
-            }
-        }
-        return null;
-    }
-
-    /**
-     * metodo que permite eliminar inscrpciones
-     * @param id
-     * @return
-     */
-    public boolean eliminarInscripcion(String id) {
-        Inscripcion inscripcion = buscarInscripcionPorId(id);
-        if (inscripcion != null) {
-            listaInscripciones.remove(inscripcion);
-            return true;
-        }
-        return false;
-    }
-
-    //LOGICA DE NEGOCIO
-
-    /**
-     * metodo que permite buscar cliente por telefono
-     * @param telefono
-     * @return
-     */
-    public Cliente buscarClientePorTelefono(String telefono) {
-        for (Cliente cliente : listaClientes) {
-            if (cliente.getTelefono().equals(telefono)) {
-                return cliente;
-            }
-        }
-        return null;
-    }
-
-    /**
-     * Metodo que verifica si el numero encontrado es un numero perfecto
-     * @param numero
-     * @return
-     */
-    public boolean esNumeroPerfecto(long numero) {
-        if (numero <= 1) {
-            return false;
-        }
-        long suma = 0;
-        for (long i = 1; i <= numero / 2; i++) {
-            if (numero % i == 0) {
-                suma += i;
-            }
-        }
-        return suma == numero;
-    }
 
 
     // setters y getters
@@ -435,6 +259,5 @@ public class gimnasio {
                 '}';
     }
 
-    public void agregarCliente(Cliente cliente) {
-    }
+
 }

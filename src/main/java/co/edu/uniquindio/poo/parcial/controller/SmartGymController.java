@@ -7,14 +7,14 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import model.Cliente;
-import model.ClienteLogica;
+import model.GestorClientes;
 import model.gimnasio;
 
 import java.time.LocalDate;
 
 public class SmartGymController {
 
-    private final ClienteLogica clienteLogica = new ClienteLogica(gimnasio.getInstance());
+    private final GestorClientes gestorClientes = new GestorClientes();
     @FXML private TextField txtNombreCliente;
     @FXML private TextField txtDocumentoCliente;
     @FXML private TextField txtTelefonoCliente;
@@ -79,13 +79,18 @@ public class SmartGymController {
                 return;
             }
 
-            if (gym.buscarClientePorDocumento(documento) != null) {
+            if (gestorClientes.buscarPorDocumento(documento) != null) {
                 mostrarMensaje("Ya existe un cliente con ese documento", true);
                 return;
             }
 
             Cliente cliente = new Cliente(nombre, documento, telefono, correo, edad, LocalDate.now());
-            gym.agregarCliente(cliente);
+            try {
+                gestorClientes.registrar(cliente);
+            } catch (Exception e) {
+                mostrarMensaje(e.getMessage(), true);
+                return;
+            }
             actualizarTablaClientes();
             limpiarFormularioCliente();
             mostrarMensaje("Cliente agregado correctamente", false);
@@ -109,7 +114,7 @@ public class SmartGymController {
                 return;
             }
 
-            boolean resultado = gym.actualizarCliente(documento, nombre, telefono, correo, edad);
+            boolean resultado = gestorClientes.actualizar(documento, nombre, telefono, correo, edad);
             if (resultado) {
                 actualizarTablaClientes();
                 limpiarFormularioCliente();
@@ -132,7 +137,7 @@ public class SmartGymController {
             return;
         }
 
-        boolean resultado = gym.eliminarCliente(documento);
+        boolean resultado = gestorClientes.eliminar(documento);
         if (resultado) {
             actualizarTablaClientes();
             limpiarFormularioCliente();
