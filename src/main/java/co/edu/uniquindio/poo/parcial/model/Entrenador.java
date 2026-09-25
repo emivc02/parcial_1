@@ -5,6 +5,15 @@ public class Entrenador extends Persona{
     private String especialidad;
     private double tarifaPorSesion;
 
+    /**
+     * metodo constructor de la clase entrenador
+     * @param nombre
+     * @param documento
+     * @param telefono
+     * @param correo
+     * @param especialidad
+     * @param tarifaPorSesion
+     */
     public Entrenador(String nombre, String documento, String telefono, String correo, String especialidad, double tarifaPorSesion) {
         super(nombre, documento, telefono, correo);
         this.especialidad = especialidad;

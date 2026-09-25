@@ -19,6 +19,9 @@ public class gimnasio {
     private List<ServicioAdicional> listaServicios = new ArrayList<>();
     private List<Inscripcion> listaInscripciones = new ArrayList<>();
 
+    /**
+     * constructor de la clase gimnasio
+     */
     private gimnasio() {
 
     }
@@ -47,6 +50,11 @@ public class gimnasio {
         listaPlanes.add(plan);
     }
 
+    /**
+     * metodo que permite buscar plan por codigo
+     * @param codigo
+     * @return
+     */
     public PlanEntrenamiento buscarPlanPorCodigo(String codigo) {
         for (PlanEntrenamiento plan : listaPlanes) {
             if (plan.getCodigo().equals(codigo)) {

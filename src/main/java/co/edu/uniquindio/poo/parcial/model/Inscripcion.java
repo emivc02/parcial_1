@@ -15,6 +15,10 @@ public class Inscripcion {
     private List<ServicioAdicional> serviciosAdicionales;
     private Descuento descuento;
 
+    /**
+     * metodo que permite crear inscripciones de forma flexible
+     * @param builder
+     */
     private Inscripcion(Builder builder) {
         this.id = builder.id;
         this.fecha = builder.fecha;
@@ -106,6 +110,10 @@ public class Inscripcion {
                 '}';
     }
 
+    /**
+     * metodo que permite calcular el total de una inscripcion
+     * @return
+     */
     public double calcularTotal() {
         double total = planEntrenamiento.calcularValorMeses();
         if (serviciosAdicionales != null) {
@@ -119,10 +127,15 @@ public class Inscripcion {
         return total;
     }
 
+    /**
+     * metodo que permite agregar un servicio adicional a la inscripcion
+     * @param servicio
+     */
     public void agregarServicio(ServicioAdicional servicio) {
         serviciosAdicionales.add(servicio);
         valorTotal = calcularTotal();
     }
+
 
     public static class Builder {
 

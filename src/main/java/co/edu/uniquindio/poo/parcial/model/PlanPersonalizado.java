@@ -6,6 +6,17 @@ public class PlanPersonalizado extends PlanEntrenamiento{
     private String especialidadRequerida;
     private String objetivoCliente;
 
+    /**
+     * constructor de la clase PlanPersonalizado
+     * @param codigo
+     * @param nombre
+     * @param descripcion
+     * @param duracionMeses
+     * @param valorMensual
+     * @param cantidadSesiones
+     * @param especialidadRequerida
+     * @param objetivoCliente
+     */
     public PlanPersonalizado(String codigo, String nombre, String descripcion, int duracionMeses, double valorMensual, int cantidadSesiones, String especialidadRequerida, String objetivoCliente) {
         super(codigo, nombre, descripcion, duracionMeses, valorMensual);
         this.cantidadSesiones = cantidadSesiones;

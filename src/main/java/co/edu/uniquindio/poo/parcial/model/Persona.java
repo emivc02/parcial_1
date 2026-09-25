@@ -7,6 +7,13 @@ public abstract class Persona {
     private String telefono;
     private String correo;
 
+    /**
+     * constructor de la clase persona
+     * @param nombre
+     * @param documento
+     * @param telefono
+     * @param correo
+     */
     public Persona(String nombre, String documento, String telefono, String correo) {
         this.nombre = nombre;
         this.documento = documento;

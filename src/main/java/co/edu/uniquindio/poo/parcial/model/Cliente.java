@@ -7,6 +7,16 @@ public class Cliente extends Persona{
     private int edad;
     private LocalDate fechaRegistro;
 
+    /**
+     *
+     * constructor de la clase cliente
+     * @param nombre
+     * @param documento
+     * @param telefono
+     * @param correo
+     * @param edad
+     * @param fechaRegistro
+     */
     public Cliente(String nombre, String documento, String telefono, String correo, int edad, LocalDate fechaRegistro) {
         super(nombre, documento, telefono, correo);
         this.edad = edad;

@@ -10,10 +10,19 @@ public class GestorClientes {
         this.gym = gimnasio.getInstance();
     }
 
+    /**
+     * metodo que retorna la lista de clientes
+     * @return
+     */
     public List<Cliente> listarClientes() {
         return gym.getListaClientes();
     }
 
+    /**
+     * metodo que permite registrar clientes
+     * @param cliente
+     * @throws Exception
+     */
     public void registrar(Cliente cliente) throws Exception {
         if (buscarPorDocumento(cliente.getDocumento()) != null) {
             throw new Exception("El cliente con el documento dado ya está registrado.");
@@ -21,6 +30,11 @@ public class GestorClientes {
         gym.getListaClientes().add(cliente);
     }
 
+    /**
+     * metodo que permite buscar cliente en base a documento
+     * @param documento
+     * @return
+     */
     public Cliente buscarPorDocumento(String documento) {
         for (Cliente c : gym.getListaClientes()) {
             if (c.getDocumento().equals(documento)) {
@@ -30,6 +44,15 @@ public class GestorClientes {
         return null;
     }
 
+    /**
+     * metodo que te permite actualizar clientes
+     * @param documento
+     * @param nombre
+     * @param telefono
+     * @param correo
+     * @param edad
+     * @return
+     */
     public boolean actualizar(String documento, String nombre, String telefono, String correo, int edad) {
         Cliente cliente = buscarPorDocumento(documento);
         if (cliente != null) {
@@ -42,6 +65,11 @@ public class GestorClientes {
         return false;
     }
 
+    /**
+     * metodo que permite eliminar cliente en base a documento
+     * @param documento
+     * @return
+     */
     public boolean eliminar(String documento) {
         Cliente cliente = buscarPorDocumento(documento);
         if (cliente != null) {
@@ -51,6 +79,11 @@ public class GestorClientes {
         return false;
     }
 
+    /**
+     * metodo que permite buscar cliente en base a telefono
+     * @param telefono
+     * @return
+     */
     public Cliente buscarPorTelefono(String telefono) {
         for (Cliente c : gym.getListaClientes()) {
             if (c.getTelefono().equals(telefono)) {
@@ -60,6 +93,11 @@ public class GestorClientes {
         return null;
     }
 
+    /**
+     * metodo para saber si un numero es perfecto
+     * @param numero
+     * @return
+     */
     public boolean esNumeroPerfecto(long numero) {
         if (numero <= 1) {
             return false;
