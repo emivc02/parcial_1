@@ -7,6 +7,8 @@ public abstract class PlanEntrenamiento {
     private String descripcion;
     private int duracionMeses;
     private double valorMensual;
+    private String beneficios;
+    private EstadoPlan estado;
 
     public PlanEntrenamiento(String codigo, String nombre, String descripcion, int duracionMeses, double valorMensual) {
         this.codigo = codigo;
@@ -56,6 +58,22 @@ public abstract class PlanEntrenamiento {
         this.valorMensual = valorMensual;
     }
 
+    public String getBeneficios() {
+        return beneficios;
+    }
+
+    public void setBeneficios(String beneficios) {
+        this.beneficios = beneficios;
+    }
+
+    public EstadoPlan getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoPlan estado) {
+        this.estado = estado;
+    }
+
     @Override
     public String toString() {
         return "PlanEntrenamiento{" +
@@ -64,6 +82,12 @@ public abstract class PlanEntrenamiento {
                 ", descripcion='" + descripcion + '\'' +
                 ", duracionMeses=" + duracionMeses +
                 ", valorMensual=" + valorMensual +
+                ", beneficios='" + beneficios + '\'' +
+                ", estado=" + estado +
                 '}';
+    }
+
+    public double calcularValorMeses() {
+        return valorMensual * duracionMeses;
     }
 }

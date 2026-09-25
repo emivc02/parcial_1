@@ -12,6 +12,7 @@ public abstract class Persona {
         this.documento = documento;
         this.telefono = telefono;
         this.correo = correo;
+
     }
 
     public String getNombre() {

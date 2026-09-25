@@ -5,9 +5,9 @@ import java.time.LocalDate;
 public class Cliente extends Persona{
 
     private int edad;
-    private final LocalDate fechaRegistro;
+    private LocalDate fechaRegistro;
 
-    public Cliente(String nombre, String documento, String telefono, String correo, LocalDate fechaRegistro) {
+    public Cliente(String nombre, String documento, String telefono, String correo, int edad, LocalDate fechaRegistro) {
         super(nombre, documento, telefono, correo);
         this.edad = edad;
         this.fechaRegistro = fechaRegistro;
@@ -23,6 +23,10 @@ public class Cliente extends Persona{
 
     public LocalDate getFechaRegistro() {
         return fechaRegistro;
+    }
+
+    public void setFechaRegistro(LocalDate fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
     }
 
     @Override
