@@ -36,4 +36,39 @@ class GestorClientesTest {
         assertFalse(gestor.esNumeroPerfecto(12));
         assertFalse(gestor.esNumeroPerfecto(3001112233L));
     }
+
+    @Test
+    void registrarCliente() throws Exception {
+        Cliente cliente = new Cliente("Juan", "1", "1", "juan@mail.com", 20, LocalDate.now());
+        gestor.registrar(cliente);
+
+        Cliente encontrado = gestor.buscarPorDocumento("1");
+        assertNotNull(encontrado);
+        assertEquals("Juan", encontrado.getNombre());
+
+        assertThrows(Exception.class, () -> gestor.registrar(cliente));
+    }
+
+    @Test
+    void actualizarCliente() {
+        Cliente cliente = new Cliente("Maria", "2", "2", "maria@mail.com", 20, LocalDate.now());
+        gimnasio.getInstance().getListaClientes().add(cliente);
+
+        boolean actualizado = gestor.actualizar("2", "Maria Jose", "2", "mariaj@mail.com", 25);
+
+        assertTrue(actualizado);
+        assertEquals("Maria Jose", cliente.getNombre());
+        assertEquals(25, cliente.getEdad());
+    }
+
+    @Test
+    void eliminarCliente() {
+        Cliente cliente = new Cliente("Pedro", "3", "3", "pedro@mail.com", 20, LocalDate.now());
+        gimnasio.getInstance().getListaClientes().add(cliente);
+
+        boolean eliminado = gestor.eliminar("3");
+
+        assertTrue(eliminado);
+        assertNull(gestor.buscarPorDocumento("3"));
+    }
 }
